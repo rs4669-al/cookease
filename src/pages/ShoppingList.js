@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Plus, Trash2, X, ShoppingCart } from 'lucide-react';
+import { Plus, Trash2, X } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useFridge, CATEGORIES, UNITS } from '../context/FridgeContext';
 import { Button, Badge, EmptyState, FormField, Input, Select, Modal } from '../components/UI';
@@ -235,7 +235,6 @@ export default function ShoppingList() {
 }
 
 function ShoppingItem({ item, onToggle, onDelete }) {
-  const cat = CATEGORIES.find(c => c.id === item.category);
   return (
     <li className={`shopping-item ${item.checked ? 'shopping-item--checked' : ''}`}>
       <button

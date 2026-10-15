@@ -9,6 +9,7 @@ import Scanner from './pages/Scanner';
 import ShoppingList from './pages/ShoppingList';
 import Recipes from './pages/Recipes';
 import Analytics from './pages/Analytics';
+import LandingPage from './pages/LandingPage';
 
 export default function App() {
   return (
@@ -35,15 +36,16 @@ export default function App() {
           }}
         />
         <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Navigate to="/dashboard" replace />} />
-            <Route path="dashboard"    element={<Dashboard />} />
-            <Route path="fridge"       element={<Fridge />} />
-            <Route path="scanner"      element={<Scanner />} />
-            <Route path="shopping"     element={<ShoppingList />} />
-            <Route path="recipes"      element={<Recipes />} />
-            <Route path="analytics"    element={<Analytics />} />
+          <Route path="/" element={<LandingPage />} />
+          <Route element={<Layout />}>
+            <Route path="dashboard" element={<Dashboard />} />
+            <Route path="fridge" element={<Fridge />} />
+            <Route path="scanner" element={<Scanner />} />
+            <Route path="shopping" element={<ShoppingList />} />
+            <Route path="recipes" element={<Recipes />} />
+            <Route path="analytics" element={<Analytics />} />
           </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </BrowserRouter>
     </FridgeProvider>

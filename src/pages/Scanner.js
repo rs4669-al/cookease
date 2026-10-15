@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { ScanLine, Search, PencilLine, CheckCircle, AlertCircle, Loader } from 'lucide-react';
 import toast from 'react-hot-toast';
 import { useFridge, CATEGORIES } from '../context/FridgeContext';
-import { Button, Modal, Badge } from '../components/UI';
+import { Button, Badge } from '../components/UI';
 import ItemForm from '../components/ItemForm';
 import './Scanner.css';
 
@@ -58,12 +58,12 @@ export default function Scanner() {
   const navigate = useNavigate();
 
   const [mode, setMode] = useState('options'); // options | camera | manual-barcode | manual-form
-  const [scanning, setScanning] = useState(false);
+  const [, setScanning] = useState(false);
   const [lookupState, setLookupState] = useState('idle'); // idle | loading | found | not-found | error
   const [scannedBarcode, setScannedBarcode] = useState('');
   const [manualBarcode, setManualBarcode] = useState('');
   const [prefill, setPrefill] = useState({});
-  const [showForm, setShowForm] = useState(false);
+  const [, setShowForm] = useState(false);
   const [added, setAdded] = useState(null);
 
   const videoRef  = useRef(null);

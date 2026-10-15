@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AlertTriangle, PackageX, ShoppingCart, Clock, ChevronRight, Plus } from 'lucide-react';
-import { useFridge, getDaysUntilExpiry, getExpiryStatus, CATEGORIES, LOCATIONS } from '../context/FridgeContext';
-import { StatCard, Badge, ExpiryBadge, Button, EmptyState } from '../components/UI';
+import { PackageX, Clock, ChevronRight, Plus } from 'lucide-react';
+import { useFridge, getDaysUntilExpiry, CATEGORIES, LOCATIONS } from '../context/FridgeContext';
+import { StatCard, Badge, ExpiryBadge, Button } from '../components/UI';
 import './Dashboard.css';
 
 export default function Dashboard() {
-  const { items, shoppingList, recipes, stats } = useFridge();
+  const { items, shoppingList, stats } = useFridge();
   const navigate = useNavigate();
 
   const expiringSoon = useMemo(() =>
