@@ -5,7 +5,7 @@ import { StatCard, Badge, EmptyState, Button } from '../components/UI';
 import './Analytics.css';
 
 export default function Analytics() {
-  const { items, shoppingList, recipes } = useFridge();
+  //const { items, shoppingList, recipes } = useFridge();
   const navigate = useNavigate();
 
   // ── Computed analytics ────────────────────────────────────────────────
